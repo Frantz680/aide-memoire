@@ -6,8 +6,11 @@ Crée un projet complet
 symfony new --full my_project
 ```
 
+```php
+symfony new my_project
+```
 
-symfony new my_project          => If you are building a microservice, console application or API
+
 
 
 
