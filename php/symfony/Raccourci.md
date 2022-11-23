@@ -1,6 +1,6 @@
 # Raccourci
 
-Crée un projet complet
+## Crée un projet complet
 
 ```php
 symfony new --full my_project
@@ -10,22 +10,26 @@ symfony new --full my_project
 symfony new my_project
 ```
 
-
-
-
-
-Lancé le serveur
+## Lancé le serveur
 
 ```php
 symfony server:start
 ```
 
+## Création d'un controller
 
+```php
 symfony console make:controller (Nom du controller)
-ex => symfony console make:controller MonCompteController
+example => symfony console make:controller MonCompteController
+```
 
-symfony console                 => Permet de voir tout les commandes de symfony
+## Permet de voir tout les commandes de symfony
 
+```php
+symfony console
+```
+
+```php
 make
   make:auth                                  Creates a Guard authenticator of different flavors
   make:command                               Creates a new console command class
@@ -81,3 +85,4 @@ doctrine
   doctrine:schema:create                     Executes (or dumps) the SQL needed to generate the database schema
   doctrine:schema:drop                       Executes (or dumps) the SQL needed to drop the current database schema
   doctrine:schema:update                     Executes (or dumps) the SQL needed to update the database schema to match the current mapping metadata
+```
