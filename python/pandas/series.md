@@ -90,3 +90,58 @@ print(data.head())
 ```
 
 ![resultat head](image/head-titanic.png)
+
+## Un peu de trie s'impose
+
+```python
+new_data = data.drop(['Name', 'PassengerId', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'], axis=1)
+
+print(new_data.head())
+
+# On supprime les données manquante
+
+new_data = data.dropna(axis=0)
+```
+
+![new-data](image/new-data.png)
+
+## Compter des données et les insérets dans un graphique
+
+### Importation de metplotlib
+
+```python
+import matplotlib.pyplot as plt
+```
+
+### Compter les personnes dans les différentes classe
+
+```python
+new_data['Pclass'].value_counts()
+
+# Résultat
+
+3    491
+1    216
+2    184
+```
+
+```python
+new_data['Pclass'].value_counts().plot.bar()
+
+plt.show()
+```
+
+![graphique-classe](image/graphique-class.png)
+
+
+### Regrouper par sexe en calculant leur moyenne
+
+```python
+new_data.groupby(['sex']).mean()
+```
+
+### Regrouper par sexe et classe en calculant leur moyenne
+
+```python
+new_data.groupby(['sex', 'pclass']).mean()
+```
