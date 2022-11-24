@@ -288,3 +288,26 @@ matrice[:,:] = 0
  [  0   0   0]]
 ```
 
+## Affecter des valeurs avec le slicing
+
+### Affecter une valeur au croisement des lignes 2 et 3 et des colonnes 2 et 3 d'une matrice 5x5
+
+```python
+matrice = np.array([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25]])
+
+matrice[2:4, 2:4] = 0
+
+# Résultat
+
+[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]
+ [11 12 13 14 15]
+ [16 17 18 19 20]
+ [21 22 23 24 25]]
+
+[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]
+ [11 12  0  0 15]
+ [16 17  0  0 20]
+ [21 22 23 24 25]]
+```
