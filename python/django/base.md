@@ -29,3 +29,10 @@
     - django-admin startproject mysite
 - Lancer le serveur local
     - python manage.py runserver
+- Créer un superuser
+    - python manage.py createsuperuser
+
+- L'exécution et de l'annulation des migrations
+    - python manage.py migrate
+- Création de nouvelles migrations
+    - python manage.py makemigrations
