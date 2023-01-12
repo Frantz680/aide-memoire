@@ -47,11 +47,9 @@ matrice_erreur = np.array([[1,2], [3,4,5]])
 scalaire.shape
 vecteur.shape
 matrice.shape
-```
 
-#### Résultat
+# Résultat
 
-```python
 ()
 (3,)
 (2,3)
