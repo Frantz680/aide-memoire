@@ -76,23 +76,26 @@ cd /usr/bin/ ou usr/bin
 # Signification : move
 
 
--f : Écrase les fichiers de destination sans confirmation
 
--i : Demande confirmation avant d'écraser
+# Écrase les fichiers de destination sans confirmation
+-f 
 
--u : N'écrase pas le fichier de destination si celui-ci est plus récent
+# Demande confirmation avant d'écraser
+-i 
 
+# N'écrase pas le fichier de destination si celui-ci est plus récent
+-u 
 
 # Exemple
 
+# Déplace monFichier dans le répertoire unRep
 mv monFichier unRep/
-Déplace monFichier dans le répertoire unRep
 
+# Déplace le fichier monFichier du répertoire unRep là où on se trouve
 mv unRep/monFichier .
-Déplace le fichier monFichier du répertoire unRep là où on se trouve
 
+# Renomme unRep en monRep
 mv unRep monRep
-Renomme unRep en monRep
 ```
 
 ## cp
@@ -102,21 +105,34 @@ Renomme unRep en monRep
 # Signification : copy
 
 
--a : Archive. Copie en gardant les droits, dates, propriétaires, groupes, etc.
--i : Demande une confirmation avant d'écraser
--f : Si le fichier de destination existe et ne peut être ouvert alors le détruire et essayer à nouveau
--R ou -r : Copie un répertoire et tout son contenu, y compris les éventuels sous-répertoires
--u : Ne copie que les fichiers plus récents ou qui n'existent pas
--v : permet de suivre les copies réalisées en temps réel
+# Archive. Copie en gardant les droits, dates, propriétaires, groupes, etc.
+-a 
+
+# Demande une confirmation avant d'écraser
+-i 
+
+# Si le fichier de destination existe et ne peut être ouvert alors le détruire et essayer à nouveau
+-f 
+
+# Copie un répertoire et tout son contenu, y compris les éventuels sous-répertoires
+-R ou -r 
+
+# Ne copie que les fichiers plus récents ou qui n'existent pas
+-u 
+
+# permet de suivre les copies réalisées en temps réel
+-v 
 
 # Exemple
 
+# Copie monFichier dans sousrep
 cp monFichier sousrep/
-Copie monFichier dans sousrep
+
+# Copie le répertoire monRep (et ses éventuels sous-répertoires) vers ailleurs en créant le répertoire ailleurs/monRep s'il n'existe pas.
 cp -r monRep/ ailleurs/
-Copie le répertoire monRep (et ses éventuels sous-répertoires) vers ailleurs en créant le répertoire ailleurs/monRep s'il n'existe pas.
+
+# Copie les fichiers spécifiés dans {} contenus dans le répertoire monRep vers ailleurs. Notez bien qu'il n'y a pas d'espace entre ces noms de fichiers.
 cp monRep/{*.cpp,*.h,MakeFile,Session.vim} ailleurs/
-Copie les fichiers spécifiés dans {} contenus dans le répertoire monRep vers ailleurs. Notez bien qu'il n'y a pas d'espace entre ces noms de fichiers.
 ```
 
 ## rm
@@ -126,18 +142,26 @@ Copie les fichiers spécifiés dans {} contenus dans le répertoire monRep vers 
 # Signification : remove
 
 
--i : Demande confirmation avant d'effacer
--f : Ne demande pas de confirmation avant d'effacer
--r : Efface récursivement. Ce mot signifie "y compris ses sous-répertoires et leur contenu".
+
+# Demande confirmation avant d'effacer
+-i
+
+# Ne demande pas de confirmation avant d'effacer
+-f 
+
+# Efface récursivement. Ce mot signifie "y compris ses sous-répertoires et leur contenu".
+-r 
 
 # Exemple
 
+# Efface du répertoire courant le fichier CeFichier.
 rm CeFichier
-Efface du répertoire courant le fichier CeFichier.
+
+# Efface le répertoire /tmp/LeRep ainsi que tous ses fichiers, liens et sous-répertoires sans demander de confirmation.
 rm -rf /tmp/LeRep
-Efface le répertoire /tmp/LeRep ainsi que tous ses fichiers, liens et sous-répertoires sans demander de confirmation.
+
+# La commande qui "tue"… Disparition immédiate de tous vos fichiers.
 rm -rf /*
-…La commande qui "tue"… Disparition immédiate de tous vos fichiers.
 ```
 
 ## mkdir
@@ -171,4 +195,3 @@ Crée le répertoire noel et s'ils n'existent pas les répertoires 2005 et photo
 rmdir LeRep
 Supprime le répertoire LeRep
 ```
-
