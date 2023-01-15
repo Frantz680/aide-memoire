@@ -36,3 +36,13 @@
     - python manage.py migrate
 - Création de nouvelles migrations
     - python manage.py makemigrations
+
+------------
+
+## Lister les dépendances
+
+```bash
+source venv/bin/activate
+
+pip freeze > requirements.txt
+```
