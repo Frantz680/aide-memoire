@@ -1,4 +1,4 @@
-# Depoilement
+# Deploiement
 
 ## Sur un VPS de Hostinger
 
