@@ -17,3 +17,9 @@ import sys, pygame
 ```python
 pygame.init()
 ```
+
+## Création de la fenetre 
+
+```python
+screen = pygame.display.set_mode(320, 240)
+```
