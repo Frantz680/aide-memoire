@@ -1,6 +1,6 @@
 # Deploiement
 
-## Sur un VPS de Hostinger
+## Sur un VPS 
 
 ### Choisir comme distribution
 
@@ -153,7 +153,7 @@ pip freeze > requirements.txt
 ```bash
 # Chercher son application sur son bureau
 cd /chemin/APP
-cd /mnt/c/ACER/Desktop/UNNOM
+cd /mnt/c/Users/ACER/Desktop/UNNOM
 
 scp -r app UNNOM:~/
 ```
@@ -186,7 +186,7 @@ ALLOWED_HOSTS = ['MONIP']
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 python manage.py collectstatic
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
 ```
 
 ### Installer Apache
