@@ -188,3 +188,112 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 python manage.py collectstatic
 python manage.py runserver
 ```
+
+### Installer Apache
+
+```bash
+sudo apt install apache2
+sudo apt install libapache2-mod-wsgi-py3
+```
+
+### Créer et paramétrer son fichier de configuration
+
+```bash
+cd /etc/apache2/sites-available/
+
+sudo cp 000-default.conf MONAPP.conf
+
+sudo nano MONAPP.conf
+```
+
+```bash
+# Une fois dans ce ficher: MONAPP.conf
+# Ajouter les informations
+
+    Alias /static /home/USER/APP/static/assets
+    <Directory /home/USER/APP/static>
+        Require all granted
+    </Directory>
+
+    Alias /media  /home/USER/APP/media
+    <Directory /home/USER/APP/media>
+        Require all granted
+    </Directory>
+
+    <Directory /home/USER/APP/APP>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+    WSGIScriptAlias / /home/USER/APP/APP/wsgi.py
+    WSGIDaemonProcess APP python-path=/home/USER/APP python-home=/home/USER/APP/venv
+    WSGIProcessGroup APP
+```
+
+```bash
+# Revenir à la racine
+cd
+
+# Activer votre site
+sudo a2ensite APP.conf
+
+# Desactiver celui par default
+sudo a2dissite 000-default.conf
+```
+
+### Permissions pour la base de données
+
+```bash
+sudo chown :www-data APP/db.sqlite3
+
+sudo chmod 664 APP/db.sqlite3
+
+sudo chown :www-data APP/
+
+sudo chown -R :www-data APP/media/
+
+sudo chmod -R 775 APP/media/
+
+sudo chmod 775 APP/
+```
+
+### Création d'un fichier configuration pour votre application
+
+```bash
+sudo touch /etc/config.json
+
+sudo nano /etc/config.json
+
+# Ajouter au fichier
+
+{
+    "SECRET_kEY": "...",
+    "EMAIL_HOST": "...",
+    "EMAIL_PASSWORD": "...",
+}
+```
+
+### Importer le fichier de configuration dans settings.py
+
+```bash
+sudo nano APP/APP/settings.py
+
+# Dans settings.py ajouter:
+import json
+
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
+
+# Dans settings.py changer :
+SECRET_KEY = config['SECRET_KEY']
+DEBUG = False
+```
+
+### Re-configurer son pare-feu
+
+```bash
+sudo ufw delete allow 8000
+sudo ufw allow http
+sudo service apache2 restart
+```
