@@ -210,7 +210,7 @@ sudo nano MONAPP.conf
 # Une fois dans ce ficher: MONAPP.conf
 # Ajouter les informations
 
-    Alias /static /home/USER/APP/static/assets
+    Alias /static /home/USER/APP/assets
     <Directory /home/USER/APP/static>
         Require all granted
     </Directory>
