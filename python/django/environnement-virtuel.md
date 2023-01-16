@@ -5,7 +5,9 @@
 ```python
 pip install virtualenv
 
+# Ceci va vous créer un dossier venv.
 python -m venv venv
 
-source venv/bin/activate
+# Ceci active un environnement virtuel.
+venv/Scripts/activate
 ```
