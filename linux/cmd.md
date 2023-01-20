@@ -175,10 +175,12 @@ rm -rf /*
 
 # Exemple
 
+
+# Crée le répertoire photos
 mkdir photos
-Crée le répertoire photos
+
+# Crée le répertoire noel et s'ils n'existent pas les répertoires 2005 et photos
 mkdir -p photos/2005/noel
-Crée le répertoire noel et s'ils n'existent pas les répertoires 2005 et photos
 ```
 
 ## rmdir
@@ -187,11 +189,12 @@ Crée le répertoire noel et s'ils n'existent pas les répertoires 2005 et photo
 
 # Signification : remove directory
 
-
--p : Supprime les répertoires parents s'ils deviennent vides
+# Supprime les répertoires parents s'ils deviennent vides
+-p : 
 
 # Exemple
 
+
+# Supprime le répertoire LeRep
 rmdir LeRep
-Supprime le répertoire LeRep
 ```
