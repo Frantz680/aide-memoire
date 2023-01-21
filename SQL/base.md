@@ -36,3 +36,61 @@ Combine une requete avec une condition OU
 ``` sql
 OR
 ```
+
+
+``` sql
+Limit
+```
+
+
+``` sql
+IN
+```
+
+``` sql
+CASE
+```
+
+``` sql
+IS NULL
+```
+
+``` sql
+LIKE
+```
+
+``` sql
+COMMIT
+```
+
+``` sql
+ROLLBACK
+```
+
+``` sql
+ALTER TABLE
+```
+
+``` sql
+UPDATE
+```
+
+``` sql
+DELETE
+```
+
+``` sql
+INSERT
+```
+
+``` sql
+DROP
+```
+
+``` sql
+GROUP BY
+```
+
+``` sql
+ORDER BY
+```
