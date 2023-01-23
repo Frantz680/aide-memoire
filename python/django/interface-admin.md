@@ -1,6 +1,38 @@
 # Interface Admin
 
+## Les templates par défaut modifiable
 
+```python
+# Texte renseigné dans la balise h1 en haut de page. Par défaut la valeur est Django Administration
+AdminSite.site_header
+
+# Texte renseigné à la fin de la balise title de chaque page. Par défaut la valeur est Django site admin
+AdminSite.site_title
+
+# Le texte renseigné au haut de la page d'index de l'administration. Par défaut: Site administration
+AdminSite.index_title
+
+# Path vers un template personnalisé qui sera utilisé par la vue principale de l'administration
+index_template	
+
+# Path vers un template personnalisé qui sera utilisé par la vue principale de l'application
+app_index_template
+
+# Path vers un template pour le login
+login_template
+
+# Sous-classe de AuthenticationForm qui sera utilisée par la vue du login d'administration
+login_form	
+
+# Path vers le template de logout
+logout_template	
+
+# Template pour le changement de mot de passe
+password_change_template
+
+# Template pour la confirmation du changement de mot de passe
+password_change_done_template	
+```
 
 ## Les options
 
