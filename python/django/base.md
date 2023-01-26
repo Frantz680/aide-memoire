@@ -32,6 +32,9 @@
 - Créer un superuser
     - python manage.py createsuperuser
 
+- Création d'une app
+    - python manage.py startapp NOM
+
 - L'exécution et de l'annulation des migrations
     - python manage.py migrate
 - Création de nouvelles migrations
