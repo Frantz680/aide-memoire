@@ -92,7 +92,16 @@ sum([1,2,3])
 # La fonction min(), au contraire, retourne la plus petite valeur d’une donnée itérable. Elle s’utilise exactement comme max().
 
 max()
+max([1,3,2,6,99,1])
+
+# Sortie 
+99
+
 min()
+min([1,3,2,6,99,1])
+
+# Sortie 
+1
 ```
 
 ## Fonction natives
@@ -169,3 +178,5 @@ upper()
 # Sortie
 'OLIVIER'
 ```
+
+https://python.doctor/page-builtin-built-in-fonctions-internes-python
