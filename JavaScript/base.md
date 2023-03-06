@@ -105,6 +105,37 @@ timer(10)
 
 ## Les tableaux
 
+```js
+//Resumer
+
+let fruits = ['pomme', 'banane', 'poire', 'fraise']
+
+fruits.length  // retourne le nombre d'éléments dans le tableau (ici retourne 4)
+
+fruits[0] // sélectionne le premier élément
+
+fruits[length - 1] // sélectionne le dernier élément
+
+fruits.push('pamplemousse') // ajoute un élément à la fin du tableau
+
+fruits.unshift('pamplemousse') // ajoute un élément au début du tableau
+
+fruits.pop() // supprime le dernier élément
+
+fruits.shift() // supprime le premier élément
+
+fruits.indexOf('banane') // retourne l'index d'un élément
+
+fruits.join() // concatène les éléments dans une chaîne de caractères avec virgules, mais il est possible de spécifier un autre séparateur dans les paranthèses
+
+fruits.slice() // crée une copie du tableau (à associer à une autre variable donc)
+
+fruits.splice([début], [nbASupprimer], [élément(s)]) // retire, remplace ou ajoute des éléments.
+// Début : l'index à partir duquel commencer le changement, si négatif, part de la fin du tableau
+// nbASupprimer : un entier indiquant le nombre d'éléments à retirer ou remplacer
+// Element(s) : les éléments à ajouter à partir du début précisé. Si aucun élément n'est spécifié, alors n'en ajoutera pas.
+```
+
 ### Tableau simple
 
 ```js
@@ -128,6 +159,18 @@ console.log(monTableau) // ['zero', 'un', 'deux', 'trois']
 
 monTableau.shift();
 console.log(monTableau) // ['un', 'deux', 'trois']
+
+// Récuperer l'index
+console.log(monTableau.indexOf('un')) // 0
+
+// Le tableau devient une chaine de caractere
+console.log(monTableau.join()) // un,deux,trois,quatre
+console.log(monTableau.join(', ')) // un, deux, trois, quatre
+console.log(monTableau.join(' / ')) // un / deux / trois / quatre
+
+// Splice
+console.log(monTableau.splice(0, 0, 'random', 'pie')) // ['random', 'pie', 'un', 'deux', 'trois', 'quatre']
+console.log(monTableau.splice(1, 0, 'random', 'pie')) // ['un', 'random', 'pie', 'deux', 'trois', 'quatre']
 ```
 
 ### Tableau à plusieurs dimensions
@@ -178,9 +221,28 @@ let monTableau2D = [
 ];
 
 monTableau2D[0].shift();
-console.log(monTableau2D)
+console.log(monTableau2D);
 //     ['Jeff', 'Bill'],
 //    ['Zuckerberg','Bezos', 'Gates'],
+
+
+// Le tableau devient une chaine de caractere
+let monTableau2D = [
+    ['Mark', 'Jeff', 'Bill'],
+    ['Zuckerberg','Bezos', 'Gates']
+];
+
+console.log(monTableau2D.join()); // Mark,Jeff,Bill,Zuckerberg,Bezos,Gates
+console.log(monTableau2D.join(', ')) ;// Mark,Jeff,Bill, Zuckerberg,Bezos,Gates
+console.log(monTableau2D.join(' / ')); // Mark,Jeff,Bill / Zuckerberg,Bezos,Gates
+
+console.log(monTableau2D[0].join(' / ')); // Mark / Jeff / Bill 
+
+
+// Splice
+console.log(monTableau2D.splice(0, 1)); // ['Zuckerberg','Bezos', 'Gates']
+console.log(monTableau2D[0].splice(0, 1)); // [['Jeff', 'Bill'], ['Zuckerberg','Bezos', 'Gates']]
+console.log(monTableau2D.splice(2, 0, ['30', '45', '70'])); // [['Mark', 'Jeff', 'Bill'], ['Zuckerberg','Bezos', 'Gates'], ['30', '45', '70']]
 ```
 
 ### Tableau associatif
@@ -208,10 +270,38 @@ console.log(monTableauAssociatif);
 
 // Supprimer des éléments
 delete(monTableauAssociatif.poste);
-console.log(monTableauAssociatif)
+console.log(monTableauAssociatif);
 //{
 //    'prenom' : 'Mark',
 //    'nom' : 'Zuckerberg',
 //    'nationalite' : 'Américaine'
 //}
+```
+
+
+## Les boucles
+
+### For in
+
+```js
+let panier = ['fraise', 'banane', 'poire'];
+
+for (const fruit in panier) {
+    console.log(fruit); // 0 1 2
+    console.log(panier[fruit]); // fraise banane poire
+    panier[fruit] = 'pomme'
+};
+
+console.log(panier) // pomme pomme pomme
+```
+
+### For of
+
+```js
+let panier = ['fraise', 'banane', 'poire'];
+
+for (const fruit of panier) {
+    console.log(fruit); // fraise banane poire
+    console.log(panier.indexOf(fruit)); // 0 1 2
+};
 ```
