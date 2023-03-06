@@ -276,6 +276,34 @@ console.log(monTableauAssociatif);
 //    'nom' : 'Zuckerberg',
 //    'nationalite' : 'Américaine'
 //}
+
+// Le tableau devient une chaine de caractere
+let chaine = '';
+
+for (const valeur in monTableauAssociatif){
+
+    chaine += (valeur + ' : ' + monTableauAssociatif[valeur] + `\n`) 
+}
+
+console.log(chaine) 
+// prenom' : 'Mark' 
+// 'nom' : 'Zuckerberg',
+// 'nationalite' : 'Américaine'
+
+// Function qui convertir un tableau en chaine
+function convTableauInString(tableau){
+    let chaine = '';
+
+    for (const valeur in tableau){
+
+        chaine += (valeur + ' : ' + tableau[valeur] + `\n`) 
+    };
+
+    return chaine;
+};
+
+console.log(convTableauInString(monTableauAssociatif))
+
 ```
 
 
@@ -304,4 +332,16 @@ for (const fruit of panier) {
     console.log(fruit); // fraise banane poire
     console.log(panier.indexOf(fruit)); // 0 1 2
 };
+```
+
+### ForEach
+
+```js
+let listeDePays = ['France', 'Belgique', 'Japon', 'Maroc'];
+
+listeDePays.forEach(function(pays){
+    console.log(pays); // France Belgique Japon Maroc
+});
+
+listeDePays.forEach(pays => console.log(pays));// France Belgique Japon Maroc
 ```
