@@ -345,3 +345,26 @@ listeDePays.forEach(function(pays){
 
 listeDePays.forEach(pays => console.log(pays));// France Belgique Japon Maroc
 ```
+
+## Fonction
+
+### Fonction fléchées
+
+```js
+let maFonction = () => {
+    console.log('test');
+};
+let maFonction = () => console.log('test');
+
+let maFonction = parametre => {
+    console.log('test 1 param');
+};
+let maFonction = parametre => console.log('test 1 param');
+
+let maFonction = (parametre, autreParametre) => {
+    console.log('test 2 param');
+};
+let maFonction = (parametre, autreParametre) => console.log('test 2 param');
+
+maFonction();
+```
