@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+
+<body>
+    <div class="contact" id="contact">
+        <div class="contact-cover">
+            <div class="contact-cover-title">
+                Contactez-moi
+            </div>
+
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="justify-content-center text-center">
+                        <form class="contact-cover-form row" method="post">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="ArvuvYTpEbU3aIMyALWlFnPjMlapliJBSNwz4zpjOSf6v8yTRziOz8TUwY2yWeZC">
+                            <div class="col-lg-6" id="class_register">
+                                <label for="id_username" id="id_username"></label>
+                                <input type="text" name="username" class="form-control" placeholder="Votre nom" maxlength="100" required="" id="id_username">
+                                
+                            </div>
+
+                            <div class="col-lg-6" id="class_register">
+                                <label for="id_email" id="id_mail"></label>
+                                <input type="email" name="email" class="form-control" placeholder="Votre E-mail" id="id_email">
+                                
+                            </div>
+
+                            <div class="fieldWrapper my-label mt-3" id="class_register">
+                                <label for="id_subjet" id="id_subjet"></label>
+                                <input type="text" name="subjet" class="form-control" placeholder="Object" maxlength="100" id="id_subjet">
+                                
+                            </div>
+
+                            <div class="fieldWrapper my-label mt-3" id="class_register">
+                                <label for="id_message" id="id_message"></label>
+                                <textarea name="message" cols="40" rows="10" class="form-control" placeholder="Votre message" required="" id="id_message"></textarea>
+                                
+                            </div>
+
+                            <div class="col-lg-12 row">
+                                <div class="contact-cover-form-input">
+                                    <input class="btn" type="submit" value="Envoyer">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 contact-logo">
+                    <img class="" src="/static/image/contact/logo-contact.png" alt="contact">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<style>
+    .contact {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../image/contact/machine-ecrire.jpg");
+    margin: 0;
+}
+
+.contact-cover {
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 100%;
+}
+
+.contact-cover-title {
+    text-align: center;
+    font-size: 80px;
+    max-height: 125px;
+    margin-bottom: 100px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+}
+
+.contact-cover-form {
+    margin-left: 100px;
+    margin-right: 100px;
+    background: rgba(255, 255, 255, .3);
+    padding: 3rem;
+    border-radius: 30px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-right: 1px solid rgba(255, 255, 255, .3);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+}
+
+.contact-cover-form input{
+    background: transparent;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    border: none;
+    border-radius: 50px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    transition: all 1s ease-out;
+}
+
+.contact-cover-form input:hover {
+    background: rgba(255, 255, 255, .1);
+    box-shadow:  4px 4px 60px 8px rgba(0, 0, 0, .2);
+}
+
+.contact-cover-form input:focus {
+    background: rgba(255, 255, 255, .5);
+    box-shadow:  4px 4px 60px 8px rgba(0, 0, 0, .2);
+}
+
+.contact-cover-form textarea{
+    background: transparent;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    border: none;
+    border-radius: 20px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    transition: all 1s ease-out;
+}
+
+.contact-cover-form textarea:hover {
+    background: rgba(255, 255, 255, .1);
+    box-shadow:  4px 4px 60px 8px rgba(0, 0, 0, .2);
+}
+
+.contact-cover-form textarea:focus {
+    background: rgba(255, 255, 255, .5);
+    box-shadow:  4px 4px 60px 8px rgba(0, 0, 0, .2);
+}
+
+.contact-cover-form-input {
+    padding-top: 25px;
+}
+
+.contact-cover-form-input input{
+    background: transparent;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+    color: #6c757d;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    transition: all 1s ease-out;
+}
+
+.contact-cover-form-input input:hover{
+    background: rgba(255, 255, 255, .5);
+    box-shadow:  4px 4px 60px 8px rgba(0, 0, 0, .2);
+}
+
+.contact-logo {
+    width: 40%;
+    background: rgba(255, 255, 255, .3);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .3);
+    display: flex;
+    -webkit-border-radius: 111px 315px 114px 367px / 146px 205px 128px 114px;
+    -moz-border-radius: 111px 315px 114px 367px / 146px 205px 128px 114px;
+    border-radius: 111px 315px 114px 367px / 146px 205px 128px 114px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+}
+
+.contact-logo img{
+    height: 80%;
+    margin: auto;
+}
+</style>
