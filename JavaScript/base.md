@@ -61,7 +61,34 @@ console.log("let : " + variableLet); // globale
 console.log("var : " + variableVar); // locale
 ```
 
-## Les fonctions récursive
+
+
+
+
+
+## Les fonctions
+
+### Fonctions avec arguments infini ( le Rest parameter )
+
+```js
+//Exemple
+
+function addition(...nombres) {
+
+    let resultat = 0;
+
+    nombres.forEach(nombre =>{
+        resultat += nombre;
+    });
+
+    console.log(resultat);
+}
+
+addition(4, 9, 5, 415, 78, 54);
+
+```
+
+### Les fonctions récursive
 
 ```js
 // Un concept qui fait qu'on appelle une fonction dans laquelle nous sommes déjà
@@ -102,6 +129,11 @@ timer(10)
 // 1
 // 0
 ```
+
+
+
+
+
 
 ## Les tableaux
 
