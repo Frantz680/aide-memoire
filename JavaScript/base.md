@@ -61,7 +61,34 @@ console.log("let : " + variableLet); // globale
 console.log("var : " + variableVar); // locale
 ```
 
-## Les fonctions récursive
+
+
+
+
+
+## Les fonctions
+
+### Fonctions avec arguments infini ( le Rest parameter )
+
+```js
+//Exemple
+
+function addition(...nombres) {
+
+    let resultat = 0;
+
+    nombres.forEach(nombre =>{
+        resultat += nombre;
+    });
+
+    console.log(resultat);
+}
+
+addition(4, 9, 5, 415, 78, 54);
+
+```
+
+### Les fonctions récursive
 
 ```js
 // Un concept qui fait qu'on appelle une fonction dans laquelle nous sommes déjà
@@ -102,6 +129,11 @@ timer(10)
 // 1
 // 0
 ```
+
+
+
+
+
 
 ## Les tableaux
 
@@ -305,6 +337,53 @@ function convTableauInString(tableau){
 console.log(convTableauInString(monTableauAssociatif))
 
 ```
+
+### Concater plusieur tableaux
+
+```js
+let fruits = ['fraise', 'banane', 'poire'];
+let aliments = ['chocolat', 'sucre', 'lait'];
+let total = aliments.concat(fruits);
+
+// Ou alors
+
+let fruits = ['fraise', 'banane', 'poire'];
+let aliments = ['chocolat', 'sucre', 'lait', ...fruits];
+
+
+
+// Petit astuce
+// Découper une chaîne de caractères en plusieurs éléments
+let phrase = 'Bonjour';
+let phraseTableau = [...phrase];
+
+console.log(phraseTableau); // ['B','o','n','j','o','u','r']
+
+
+
+// Autre astuce
+// Récuperer le premier élément d'un tableau
+// Puis récuperer les autres éléments
+
+let devises = ['dollars', 'euro', 'yen'];
+
+// Sans décomposition
+let premiereDevise = devise[0];
+let autres = [devises[1], devises[2]];
+
+// Avec décomposition
+let [premiereDevise, ...autres] = devises;
+```
+
+
+
+
+
+
+
+
+
+
 
 
 ## Les boucles
