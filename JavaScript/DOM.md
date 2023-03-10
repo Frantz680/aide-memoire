@@ -174,3 +174,111 @@ document.querySelector('h1').style.textAlign = 'center';
 // 3ème méthode : avec une classe
 document.querySelector('header').className = '.ma_new_class';
 ```
+
+
+
+
+
+
+## Les évènements
+
+### Résumer
+
+```js
+// Les écouteurs "on" et les propriétés JavaScript
+onfocus // Quand l'utilisateur sélectionne l'élément
+
+onchange // Quand l'utilisateur change la valeur de l'élément
+
+onclick // Quand l'utilisateur clique sur l'élément
+
+ondblclick // Quand l'utilisateur double-clique sur l'élément
+
+onkeypress // Quand l'utilisateur appuie sur une touche du clavier dans l'élément
+
+
+
+// Les évènements avec addEventListener
+click // Quand l'utilisateur clique sur l'élément
+
+mouseover // Quand l'utilisateur passe avec sa souris au-dessus d'un élément
+
+mouseout // Quand l'utilisateur sort avec sa souris d'un élément
+
+copy // Quand l'utilisateur copie un élément
+
+cut // Quand l'utilisateur coupe un élément
+
+paste // Quand l'utilisateur colle un élément
+```
+
+
+
+### onclick
+
+```js
+<a onclick="return confirm('Etes-vous sûr de vouloir supprimer cet article ?')" href="https://site.com">Supprimer cet article</a>
+
+<button onmouseover="document.body.style.backgroundColor='orange'"
+        onmouseout="document.body.style.backgroundColor='white'">Passez au-dessus de moi</button>
+```
+
+
+### Les propriétés JS
+
+```js
+let a = document.querySelector('a');
+let button = document.querySelector('button');
+
+// Fonction non fléchée
+a.onclick = function(){
+  if(confirm('Etes-vous sûr ?')) {
+    location.href="https://site.com"
+  }
+}
+
+// Fonction fléchée
+a.onclick = () => {
+  if(confirm('Etes-vous sûr ?')) {
+    location.href="https://site.com"
+  }
+}
+
+button.onmouseover = () => {
+  document.body.style.backgroundColor = 'orange';
+}
+
+button.onmouseout = () => {
+  document.body.style.backgroundColor = 'white';
+}
+```
+
+
+
+### Gestionnaire d'évènements
+
+```js
+let a = document.querySelector('a');
+let button = document.querySelector('button');
+
+a.addEventListener('click', (e) => {
+  if(confirm('Etes-vous sûr ?')) {
+    location.href = "https://site.com";
+  }
+});
+
+button.addEventListener('mouseover', () => {
+  document.body.style.backgroundColor = 'orange';
+});
+
+function backgroundWhite() {
+  document.body.style.backgroundColor = 'white';
+}
+
+button.addEventListener('mouseout', backgroundWhite);
+button.addEventListener('mouseout', () => {
+  document.body.style.fontFamily = 'arial';
+});
+
+button.removeEventListener('mouseout', backgroundWhite);
+```
