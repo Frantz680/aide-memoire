@@ -338,6 +338,19 @@ console.log(convTableauInString(monTableauAssociatif))
 
 ```
 
+### Concater plusieur tableaux
+
+```js
+let fruits = ['fraise', 'banane', 'poire'];
+let aliments = ['chocolat', 'sucre', 'lait'];
+let total = aliments.concat(fruits);
+```
+
+
+
+
+
+
 
 ## Les boucles
 
