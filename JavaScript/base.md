@@ -344,7 +344,41 @@ console.log(convTableauInString(monTableauAssociatif))
 let fruits = ['fraise', 'banane', 'poire'];
 let aliments = ['chocolat', 'sucre', 'lait'];
 let total = aliments.concat(fruits);
+
+// Ou alors
+
+let fruits = ['fraise', 'banane', 'poire'];
+let aliments = ['chocolat', 'sucre', 'lait', ...fruits];
+
+
+
+// Petit astuce
+// Découper une chaîne de caractères en plusieurs éléments
+let phrase = 'Bonjour';
+let phraseTableau = [...phrase];
+
+console.log(phraseTableau); // ['B','o','n','j','o','u','r']
+
+
+
+// Autre astuce
+// Récuperer le premier élément d'un tableau
+// Puis récuperer les autres éléments
+
+let devises = ['dollars', 'euro', 'yen'];
+
+// Sans décomposition
+let premiereDevise = devise[0];
+let autres = [devises[1], devises[2]];
+
+// Avec décomposition
+let [premiereDevise, ...autres] = devises;
 ```
+
+
+
+
+
 
 
 
