@@ -282,3 +282,37 @@ button.addEventListener('mouseout', () => {
 
 button.removeEventListener('mouseout', backgroundWhite);
 ```
+
+
+
+
+### Propagation des évènements
+
+```js
+let article = document.querySelector('article');
+let h1      = document.querySelector('h1');
+
+article.addEventListener('click', () => {
+  alert('article cliqué');
+});
+
+h1.addEventListener('click', (e) => {
+  alert('titre cliqué');
+  e.stopPropagation(); // On stop la propagation
+});
+```
+
+
+
+
+### Planifier l'exécution d'un script
+
+```js
+// setTimeout
+let timer = setTimeout("alert('Bonjour')", 3000); 
+clearTimeout(timer);
+
+// setInterval
+let interval = setInterval("alert('Bonjour')", 5000); // S'executer en permanence
+clearInterval(interval);
+```
