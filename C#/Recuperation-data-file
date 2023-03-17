@@ -1,0 +1,111 @@
+using ExerciceLectureFichier.Context;
+using ExerciceLectureFichier.Context.DbContextFormation;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using sib_api_v3_sdk.Api;
+using sib_api_v3_sdk.Client;
+using sib_api_v3_sdk.Model;
+using Task = System.Threading.Tasks.Task;
+using System.Xml.Linq;
+using System.Globalization;
+
+namespace ExerciceLectureFichier
+{
+    class Program
+    {
+        public static IConfigurationRoot IConfiguration = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).
+               AddEnvironmentVariables().Build();
+        private static FormationContext Context = new FormationDbContextFactory().CreateDbContext();
+
+        static async Task Main(string[] args)
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Title = "";
+
+            // Le chemin du fichier
+            string path = @"C:\git\formation\ExerciceLectureFichier\DossierDesNouvellesDonnees\data.csv";
+
+            // Si le fichier est existant
+            if (File.Exists(path))
+            {
+
+                // On parcoure le fichier
+                using (FileStream fs = File.OpenRead(path))
+                {
+                    byte[] b = new byte[1024];
+                    UTF8Encoding temp = new UTF8Encoding(true);
+                    while (fs.Read(b, 0, b.Length) > 0)
+                    {
+
+                        // On split notre chaine
+                        string[] allData = temp.GetString(b).Split( ';', '\n');
+
+                        // On declare le compteur
+                        int compteur = 0;
+
+                        // On parcoure les data
+                        for(int i = 0; i < allData.Length; i++)
+                        {
+                            // Si le compteur est inferieur a 30
+                            if(compteur < 30)
+                            {
+
+                                // On recuperer le matricule
+                                var matricule = allData[compteur];
+
+                                // On recupere le prénom
+                                var prenom = allData[compteur + 1];
+
+                                // On recupere le nom
+                                var nom = allData[compteur + 2];
+
+                                // On recupere la date
+                                var date = DateTime.ParseExact(allData[compteur + 3], "yyyy-MM-dd HH:mm:ss,fff", CultureInfo.InvariantCulture);
+
+                                // On recupere l'equipe
+                                var equipe = allData[compteur + 4];
+
+                                Console.WriteLine(date);
+
+                                // On fait notre requete
+                                var item = Context.DonneesDeTest.Where(i => i.Matricule == matricule && i.DateMaj < date).FirstOrDefault();
+
+                                // Securiter
+                                if (item != null)
+                                {
+
+                                    // On remplace les données
+                                    item.Prenom = prenom;
+                                    item.Nom = nom;
+                                    item.DateMaj = date;
+                                    item.Equipe = equipe;
+                                   
+                                }
+
+                            }
+
+                            // On incremente le compteur
+                            compteur += 5;
+                        }
+
+                        // On sauvegarde
+                        Context.SaveChanges();
+                    }
+                }
+            }
+        }
+    }
+}
