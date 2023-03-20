@@ -80,12 +80,40 @@ FROM `table`
 WHERE nom_colonne IS NOT NULL
 ```
 
+Il permet d'éffectuer une recherche sur un modèle particulier
 ``` sql
 LIKE
+
+LIKE '%a' : le caractère “%” est un caractère joker qui remplace tous les autres caractères. Ainsi, ce modèle permet de rechercher toutes les chaines de caractère qui se termine par un “a".
+
+LIKE 'a%' : ce modèle permet de rechercher toutes les lignes de “colonne” qui commence par un “a”.
+
+LIKE '%a%' : ce modèle est utilisé pour rechercher tous les enregistrement qui utilisent le caractère “a”.
+
+LIKE 'pa%on' : ce modèle permet de rechercher les chaines qui commence par “pa” et qui se terminent par “on”, comme “pantalon” ou “pardon”.
+
+LIKE 'a_c' : : peu utilisé, le caractère “_” (underscore) peut être remplacé par n’importe quel caractère, mais un seul caractère uniquement (alors que le symbole pourcentage “%” peut être remplacé par un nombre incalculable de caractères . Ainsi, ce modèle permet de retourner les lignes “aac”, “abc” ou même “azc”.
+
+/*Exemple :*/
+SELECT *
+FROM table
+WHERE colonne LIKE modele
 ```
 
+Commit est la commande SQL utilisée pour stocker les modifications effectuées par une transaction
 ``` sql
 COMMIT
+
+/*Exemple
+Supprimons maintenant une ligne du tableau
+*/
+DELETE FROM Customer WHERE State = 'Texas';
+
+/*
+Si la session est fermée, la modification apportée en raison de la commande DELETE sera perdue
+*/
+DELETE from Customer where State = 'Texas';
+COMMIT;
 ```
 
 ``` sql
