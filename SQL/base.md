@@ -56,7 +56,7 @@ La commande CASE est comme un switch
 ``` sql
 CASE
 
-/*Exemple :*/
+#Exemple :
 CASE a 
        WHEN 1 THEN 'un'
        WHEN 2 THEN 'deux'
