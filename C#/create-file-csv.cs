@@ -138,3 +138,4 @@ namespace ExportEntreprise
 }
 
 https://riptutorial.com/epplus => doc
+https://riptutorial.com/epplus/example/26413/complete-example-with-all-styles => doc pour le style
