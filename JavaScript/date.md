@@ -8,6 +8,7 @@ new Date().setDate(new Date().getDate() + 1)
 
 ## Fonction pour calculer les semaines à partir d'une date
 
+```js
 function Semaine(dateDebut){
   var dateDebutFR = GetDateFormatteeFr(dateDebut); 
 
@@ -23,3 +24,4 @@ function Semaine(dateDebut){
   var numberOfDays = Math.floor((newDate - janvier) / (24 * 60 * 60 * 1000));
   return Math.ceil((newDate.getDay() + 1 + numberOfDays) / 7);
 }
+```
