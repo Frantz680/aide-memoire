@@ -43,3 +43,21 @@ function GetDateFormatteeFr(d) {
   return jj + "/" + mm + "/" +yyyy;
 }
 ```
+
+## Fonction pour avoir le format JJ/MM/YYYY à HH h MM
+
+```js
+function GetDateEtHeureFormatteeFr(d) {
+  if(typeof d=="string" ){
+    d= new Date(d);
+  }
+  var jj = (d.getDate() < 10) ? "0" : "";
+  jj += d.getDate();
+  var mm = (d.getMonth() + 1 < 10) ? "0" : "";
+  mm += d.getMonth() + 1;
+  var yyyy = d.getFullYear();
+  var hh = d.getHours();
+  var MM = (d.getMinutes() < 10) ? "0" + d.getMinutes() : "" + d.getMinutes();
+  return jj + "/" + mm + "/" +yyyy+" à "+hh+"h"+MM;
+}
+```
