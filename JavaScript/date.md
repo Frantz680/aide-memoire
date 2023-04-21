@@ -25,3 +25,21 @@ function Semaine(dateDebut){
   return Math.ceil((newDate.getDay() + 1 + numberOfDays) / 7);
 }
 ```
+## Fonction pour avoir le format JJ/MM/YYYY
+
+```js
+function GetDateFormatteeFr(d) {
+  if(d==null){
+    return "-";
+  }
+  if(typeof d=="string"){
+    d= new Date(d);
+  }
+  var jj = (d.getDate() < 10) ? "0" : "";
+  jj += d.getDate();
+  var mm = (d.getMonth() + 1 < 10) ? "0" : "";
+  mm += d.getMonth() + 1;
+  var yyyy = d.getFullYear();
+  return jj + "/" + mm + "/" +yyyy;
+}
+```
