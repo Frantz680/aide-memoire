@@ -61,3 +61,18 @@ function GetDateEtHeureFormatteeFr(d) {
   return jj + "/" + mm + "/" +yyyy+" à "+hh+"h"+MM;
 }
 ```
+
+## Fonction pour avori la date d'aujourd'hui
+
+```js
+function getCurrentDateHour() {
+  let d = new Date;
+  let annee = d.getFullYear();
+  let mois = d.getMonth() + 1;
+  mois = (mois < 10) ? "0"+mois : mois;
+  let jour = d.getDate() < 10 ? "0" + d.getDate() : d.getDate();
+  let heure = d.getHours() < 10 ? "0" + d.getHours() : d.getHours();
+  let minute = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
+  return jour+"."+mois+"."+annee+"-"+heure+"."+minute;
+}
+```
