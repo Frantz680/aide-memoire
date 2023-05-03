@@ -62,7 +62,7 @@ function GetDateEtHeureFormatteeFr(d) {
 }
 ```
 
-## Fonction pour avori la date d'aujourd'hui
+## Fonction pour avoir la date d'aujourd'hui
 
 ```js
 function getCurrentDateHour() {
