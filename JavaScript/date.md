@@ -76,3 +76,22 @@ function getCurrentDateHour() {
   return jour+"."+mois+"."+annee+"-"+heure+"."+minute;
 }
 ```
+
+```js
+function getVendredisDansMois(mois, annee) {
+   const vendredis = [];
+
+   // Création d'une date pour le premier jour du mois spécifié
+   const dateDebut = new Date(annee, mois, 1);
+
+   // Boucle pour parcourir tous les jours du mois
+   while (dateDebut.getMonth() === mois ) {
+      if (dateDebut.getDay() === 5) { // 5 correspond au vendredi (dimanche=0, lundi=1, ..., vendredi=5, samedi=6)
+            vendredis.push(new Date(dateDebut).toLocaleDateString("fr"));
+      }
+          dateDebut.setDate(dateDebut.getDate() + 1);
+      }
+
+   return vendredis;
+}
+```
