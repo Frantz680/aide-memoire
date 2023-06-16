@@ -316,3 +316,14 @@ clearTimeout(timer);
 let interval = setInterval("alert('Bonjour')", 5000); // S'executer en permanence
 clearInterval(interval);
 ```
+
+
+### Modifier le :before
+
+```js
+// Exemple
+var allSpan = document.querySelectorAll(".span-");
+
+before = getComputedStyle(allSpan[this.ParamVerifData.colonne], ":before").getPropertyValue('content');
+allSpan[this.ParamVerifData.colonne].setAttribute('data-value', response.data.valeur);
+```
