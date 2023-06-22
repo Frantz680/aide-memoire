@@ -14,4 +14,6 @@
   memory.Position = 0;
 
   string base64 = Convert.ToBase64String(bytes);
+
+  return Ok(new {fichier = base64, nomFichier = nomFicher});
 ```
