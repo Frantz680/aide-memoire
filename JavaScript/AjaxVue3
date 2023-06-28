@@ -6,5 +6,9 @@ GET
 
 POST
 this.$http
-    .post(getUrlWs() + 'Saisie/VerifData', param, { headers: authHeader() })
+    .post(getUrlWs() + 'path', param, { headers: authHeader() })
     .then(response => {
+
+    }).catch((err) => {
+
+});
