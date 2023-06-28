@@ -1,1 +1,10 @@
+Requete ajax avec vue3
 
+
+GET
+
+
+POST
+this.$http
+    .post(getUrlWs() + 'Saisie/VerifData', param, { headers: authHeader() })
+    .then(response => {
