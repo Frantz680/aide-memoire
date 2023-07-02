@@ -62,3 +62,19 @@ int a = 10;
 int b = 4;
 double c = a / (double) b; //-> c contient 2,5, car la valeur de b est convertie en double
 ```
+
+## Les namespace
+
+C'est comme des tiroirs ou l'on peut ranger des classes, functions, etc...
+
+```c#
+//Fichier voiture.cs
+using System;
+
+namespace MyApp
+{
+    class Voiture
+    {
+        Marque VW;
+    }
+}
