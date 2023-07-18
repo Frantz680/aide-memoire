@@ -27,18 +27,30 @@
 
 - Création d'un projet
     - django-admin startproject mysite
+
 - Lancer le serveur local
     - python manage.py runserver
-- Créer un superuser
+
+- Créer un superutilisateur
     - python manage.py createsuperuser
 
-- Création d'une app
-    - python manage.py startapp NOM
+- Création d'une application
+    - python manage.py startapp nom_de_l_app
 
-- L'exécution et de l'annulation des migrations
-    - python manage.py migrate
 - Création de nouvelles migrations
     - python manage.py makemigrations
+
+- Exécution et annulation des migrations
+    - python manage.py migrate
+
+- Création d'un fichier staticfiles
+    - python manage.py collectstatic
+
+- Lancer les tests
+    - python manage.py test
+
+- Créer une nouvelle application avec un répertoire pour les modèles, vues et URL
+    - python manage.py startapp nom_de_l_app
 
 ------------
 
