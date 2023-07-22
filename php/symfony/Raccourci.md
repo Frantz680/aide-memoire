@@ -1,5 +1,9 @@
 # Raccourci
 
+```php
+symfony console
+```
+
 ## Crée un projet complet
 
 ```php
