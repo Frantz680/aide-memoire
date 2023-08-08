@@ -1,5 +1,47 @@
 # Raspberry
 
+# Raccourcis et Commandes Utiles pour le Raspberry Pi
+
+Lorsque vous travaillez avec un Raspberry Pi, il existe plusieurs raccourcis clavier et commandes en ligne de commande qui peuvent vous aider à naviguer plus efficacement et à effectuer des tâches spécifiques. Voici quelques-uns des raccourcis et des commandes les plus utiles :
+
+## Raccourcis Clavier
+
+- `Ctrl` + `C` : Interrompt une commande en cours d'exécution dans le terminal.
+- `Ctrl` + `D` : Quitte le terminal en cours.
+- `Ctrl` + `L` : Efface l'écran du terminal.
+- `Ctrl` + `A` : Déplace le curseur au début de la ligne.
+- `Ctrl` + `E` : Déplace le curseur à la fin de la ligne.
+- `Ctrl` + `U` : Supprime tout le texte avant le curseur.
+- `Ctrl` + `K` : Supprime tout le texte après le curseur.
+- `Ctrl` + `R` : Permet de rechercher dans l'historique des commandes.
+- `Tab` : Auto-complétion des commandes et des noms de fichiers.
+
+## Commandes en Ligne de Commande
+
+- `ls` : Liste les fichiers et les dossiers dans le répertoire courant.
+- `cd [dossier]` : Change le dossier actuel.
+- `pwd` : Affiche le chemin absolu du dossier actuel.
+- `mkdir [nom_dossier]` : Crée un nouveau dossier.
+- `rm [nom_fichier]` : Supprime un fichier.
+- `rmdir [nom_dossier]` : Supprime un dossier vide.
+- `cp [fichier_source] [fichier_destination]` : Copie un fichier.
+- `mv [fichier_source] [fichier_destination]` : Déplace un fichier.
+- `nano [nom_fichier]` : Ouvre l'éditeur de texte Nano pour éditer un fichier.
+- `sudo [commande]` : Exécute une commande en tant qu'administrateur.
+- `apt-get update` : Met à jour la liste des paquets disponibles.
+- `apt-get install [nom_paquet]` : Installe un paquet.
+- `apt-get upgrade` : Met à jour les paquets installés.
+- `ifconfig` : Affiche les informations sur les interfaces réseau.
+- `ping [adresse_ip]` : Envoie des paquets ICMP pour tester la connectivité réseau.
+
+## Personnalisation du Shell
+
+Vous pouvez personnaliser votre shell en modifiant le fichier de configuration `.bashrc`. Pour ce faire, utilisez la commande :
+
+```bash
+nano ~/.bashrc
+```
+
 ## Activée le port serie du raspberry 
 
 - sudo raspi-config
