@@ -1,0 +1,112 @@
+// ************** Btn ***************
+
+
+
+.btn-green {
+    color: white;
+    border-radius: 5px;
+    background-color: $vert-SPVI; 
+    transition: all 0.5s ease-out;
+    border: 1px solid $vert-SPVI; 
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    &:hover {
+        color: $vert-SPVI; 
+        background-color: white;
+        border: 1px solid $vert-SPVI; 
+        transform: scale(1.1);
+    }
+}
+
+.btn-green-hover {
+    color: $vert-SPVI; 
+    background-color: white;
+    border: 1px solid $vert-SPVI; 
+    transition: all 0.5s ease-out;
+    transform: scale(1.1);
+    margin-left: 10px;
+}
+
+.btn-grey {
+    color: #747474;
+    border-radius: 5px;
+    background-color: #dddddd; 
+    transition: all 0.5s ease-out;
+    border: 1px solid #dddddd; 
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    &:hover {
+        color: #747474;
+        transform: scale(1.1);
+        background-color: white;
+        border: 1px solid #747474;
+    }
+}
+
+.btn-yellow {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    padding: 1px;
+    &:hover {
+        color: #ffc107;
+        background-color: white;
+        border: 1px solid #ffc107;
+        transition: all 0.5s ease-out;
+    }
+}
+
+.btn-red {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    padding: 1px;
+    &:hover {
+        color: #dc3545;
+        background-color: white;
+        border: 1px solid #dc3545;
+        transition: all 0.5s ease-out;
+    }
+}
+
+.btn-blue {
+    background-color: #4993be;
+    border-color: #4993be;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    padding: 1px;  
+    &:hover {
+        color: #4993be;
+        background-color: white;
+        border: 1px solid #4993be;
+        transition: all 0.5s ease-out; 
+    }
+}
+
+
+.btn-blue-dark {
+    background-color: #003e65;
+    border-color: #003e65;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+    &:hover {
+        color: #003e65;
+        background-color: white;
+        border: 1px solid #003e65;
+        transition: all 0.5s ease-out; 
+        transform: scale(1.1);
+    }
+}
+
+
+
+// ************** End btn ***************
