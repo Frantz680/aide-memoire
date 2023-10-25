@@ -39,3 +39,42 @@ class Program
         }
     }
 }
+
+
+// Autre exemple de requete d'api
+
+const axios = require('axios');
+
+const clientId = 'VotreClientID';
+const clientSecret = 'VotreClientSecret';
+const grantType = 'password'; // Ou 'client_credentials' selon le flux OAuth2 que vous utilisez
+const username = 'VotreNomUtilisateur';
+const password = 'VotreMotDePasse';
+
+const tokenUrl = 'https://sandbox-oauth.piste.gouv.fr/api/oauth/token';
+
+// Les données à inclure dans la demande
+const data = {
+  grant_type: grantType,
+  client_id: clientId,
+  client_secret: clientSecret,
+  username: username, // Inclus uniquement pour le flux 'password'
+  password: password, // Inclus uniquement pour le flux 'password'
+};
+
+// En-tête de la demande
+const config = {
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+};
+
+axios.post(tokenUrl, data, config)
+  .then((response) => {
+    // Traitement de la réponse
+    console.log('Token d\'accès obtenu :', response.data.access_token);
+  })
+  .catch((error) => {
+    // Gestion des erreurs
+    console.error('Erreur lors de la demande de token :', error);
+  });
