@@ -41,7 +41,7 @@ class Program
 }
 
 
-// Autre exemple de requete d'api
+// Autre exemple de requete d'api avec axios
 
 const axios = require('axios');
 
@@ -78,3 +78,61 @@ axios.post(tokenUrl, data, config)
     // Gestion des erreurs
     console.error('Erreur lors de la demande de token :', error);
   });
+
+// Autre requete
+
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Text;
+using System.Collections.Generic;
+
+class Program
+{
+    static async Task Main()
+    {
+        string clientId = "VotreClientID";
+        string clientSecret = "VotreClientSecret";
+        string grantType = "password"; // Ou "client_credentials" selon le flux OAuth2 que vous utilisez
+        string username = "VotreNomUtilisateur";
+        string password = "VotreMotDePasse";
+        string tokenUrl = "https://sandbox-oauth.piste.gouv.fr/api/oauth/token";
+
+        using (HttpClient client = new HttpClient())
+        {
+            var requestData = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("grant_type", grantType),
+                new KeyValuePair<string, string>("client_id", clientId),
+                new KeyValuePair<string, string>("client_secret", clientSecret),
+                new KeyValuePair<string, string>("username", username), // Inclus uniquement pour le flux 'password'
+                new KeyValuePair<string, string>("password", password), // Inclus uniquement pour le flux 'password'
+            };
+
+            var requestContent = new FormUrlEncodedContent(requestData);
+
+            try
+            {
+                var response = await client.PostAsync(tokenUrl, requestContent);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine("Token d'accès obtenu : " + responseContent);
+                }
+                else
+                {
+                    Console.WriteLine("Erreur lors de la demande de token : " + response.ReasonPhrase);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Une erreur s'est produite : " + ex.Message);
+            }
+        }
+    }
+}
+
+
+
+
