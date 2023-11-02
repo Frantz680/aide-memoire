@@ -18,7 +18,7 @@
 }
 
 .btn-green-hover {
-    color: $vert-SPVI; 
+    color: $vert; 
     background-color: white;
     border: 1px solid $vert-SPVI; 
     transition: all 0.5s ease-out;
