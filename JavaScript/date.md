@@ -51,6 +51,16 @@ function GetDateEtHeureFormatteeFr(d) {
   if(typeof d=="string" ){
     d= new Date(d);
   }
+
+// OU
+  if (typeof d === "string") {
+    var parts = d.split(/[\s\/:]/);
+
+    // parts[2] année, parts[1] - 1 mois
+    // parts[0] jour, parts[3] heure, parts[4] minute, parts[5] seconde
+    d = new Date(parts[2], parts[1] - 1, parts[0], parts[3], parts[4], parts[5]);
+  }
+
   var jj = (d.getDate() < 10) ? "0" : "";
   jj += d.getDate();
   var mm = (d.getMonth() + 1 < 10) ? "0" : "";
