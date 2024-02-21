@@ -8,9 +8,9 @@
 Ubuntu 18.04
 ```
 
-### Connexion au serveur
+## Connexion au serveur
 
-# Se connecter au serveur via SSH
+### Se connecter au serveur via SSH
 
 ```bash
 ssh root@MONIP
