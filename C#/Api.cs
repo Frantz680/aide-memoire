@@ -134,5 +134,37 @@ class Program
 }
 
 
+// API Iban
+// https://github.com/skwasjer/IbanNet
 
+using IbanNet;
+using IbanNet.DataAnnotations;
+using IbanNet.Validation.Results;
+using System;
 
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Exemple de code IBAN valide
+        string iban = "FR1420041010050500013M02606";
+
+        // Valider l'IBAN
+        IIbanValidator validator = new IbanValidator();
+        ValidationResult validationResult = validator.Validate(iban);
+
+        // Vérifier si l'IBAN est valide
+        if (validationResult.IsValid)
+        {
+            Console.WriteLine($"L'IBAN '{iban}' est valide.");
+        }
+        else
+        {
+            Console.WriteLine($"L'IBAN '{iban}' n'est pas valide :");
+            foreach (var error in validationResult.Errors)
+            {
+                Console.WriteLine($" - {error.ErrorMessage}");
+            }
+        }
+    }
+}
