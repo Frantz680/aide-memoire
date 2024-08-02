@@ -9,6 +9,7 @@ dotnet restore: Restaure les dépendances du projet en lisant le fichier project
 dotnet build: Compile le projet et ses dépendances. Cela génère les fichiers binaires dans le dossier de sortie.
 
 dotnet run: Compile et exécute l'application en une seule étape.
+dotnet watch run --non-interactive
 
 dotnet publish: Publie l'application pour un déploiement. Cette commande crée une version exécutable de l'application dans un dossier de publication.
 
