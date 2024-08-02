@@ -1,4 +1,4 @@
-Commandes .NET Core
+## Commandes .NET Core
 Voici quelques-unes des commandes les plus couramment utilisées avec .NET Core :
 
 Gestion de projets
